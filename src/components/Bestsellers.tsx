@@ -7,7 +7,7 @@ const products = [
     benefit: 'Back Support That Works',
     price: '₹12,999',
     rating: 4.7,
-    image: '🛏️',
+    image: 'https://res.cloudinary.com/dqyizevct/image/upload/v1763994752/fin_v9fffd.webp',
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const products = [
     benefit: 'Maximum Pressure Relief',
     price: '₹15,999',
     rating: 4.8,
-    image: '🛏️',
+    image: 'https://res.cloudinary.com/dqyizevct/image/upload/v1763994773/Racerblue2_tnkj04.webp',
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const products = [
     benefit: 'Ultimate Comfort & Support',
     price: '₹18,999',
     rating: 4.9,
-    image: '🛏️',
+    image: 'https://res.cloudinary.com/dqyizevct/image/upload/v1763994958/Racer_PLUS_Golden_z6vs3y.webp',
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const products = [
     benefit: 'Premium Orthopedic Excellence',
     price: '₹24,999',
     rating: 4.9,
-    image: '🛏️',
+    image: 'https://res.cloudinary.com/dqyizevct/image/upload/v1763994958/Elite22_fnrjbe.webp',
   },
 ];
 
@@ -45,14 +45,15 @@ export default function Bestsellers() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none">
           {products.map((product) => (
             <div
               key={product.id}
-              className="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              className="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex-shrink-0 w-[280px] md:w-auto snap-center"
             >
-              <div className="aspect-square bg-gradient-to-br from-slate-100 to-blue-50 flex items-center justify-center p-8">
-                <span className="text-8xl">{product.image}</span>
+              <div className="">
+                <img src={product.image} alt="" />
+               
               </div>
 
               <div className="p-6 space-y-4">

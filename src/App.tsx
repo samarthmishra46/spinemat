@@ -7,12 +7,14 @@ import Benefits from './components/Benefits';
 import Comparison from './components/Comparison';
 import DeliveryWarranty from './components/DeliveryWarranty';
 import FinalCTA from './components/FinalCTA';
+import { VideoRunning } from './components/RunningVideoLtoR';
 
-function App() {
+function App() { 
   return (
     <div className="min-h-screen bg-white">
       <Hero />
       <Bestsellers />
+      <VideoRunning/>
       <WhyChoose />
       <Reviews />
       <Construction />

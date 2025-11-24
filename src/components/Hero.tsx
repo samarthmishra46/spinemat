@@ -1,11 +1,38 @@
 import { Shield, Truck, Star, MapPin } from 'lucide-react';
+import { useState, useEffect } from 'react';
+
+const heroImages = [
+  { id: 1, emoji: '😴', bg: 'from-blue-100 to-blue-200' },
+  { id: 2, emoji: '🛏️', bg: 'from-purple-100 to-purple-200' },
+  { id: 3, emoji: '✨', bg: 'from-green-100 to-green-200' },
+  { id: 4, emoji: '🌙', bg: 'from-indigo-100 to-indigo-200' },
+  { id: 5, emoji: '💤', bg: 'from-pink-100 to-pink-200' },
+];
 
 export default function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        {/* Logo Space */}
+        <div className="flex justify-center mb-12 md:mb-16">
+          <div className="text-3xl md:text-4xl font-bold text-gray-900">
+           
+           <img src="https://res.cloudinary.com/dqyizevct/image/upload/v1763995092/Spinemat_Mattress_2_kxwi08.avif" alt="Spinemat Logo" className="h-12 md:h-16" />
+          </div>
+        </div>
+        
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          <div className="space-y-8 order-2 md:order-1">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 India Is Choosing Better Sleep. You Deserve It Too.
@@ -39,17 +66,26 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative order-1 md:order-2">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <div className="aspect-square bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-64 h-64 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <span className="text-6xl">😴</span>
+              <div className="relative aspect-square">
+                {heroImages.map((image, index) => (
+                  <div
+                    key={image.id}
+                    className={`absolute inset-0 bg-gradient-to-br ${image.bg} flex items-center justify-center transition-opacity duration-1000 ${
+                      index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    <div className="text-center p-8">
+                      <div className="w-64 h-64 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <span className="text-6xl">{image.emoji}</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-xl">
+            <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-xl z-10">
               <div className="text-sm font-semibold">Trusted by</div>
               <div className="text-2xl font-bold">10,000+</div>
               <div className="text-sm">Happy Sleepers</div>
