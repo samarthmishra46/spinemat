@@ -2,11 +2,11 @@ import { Shield, Truck, Star, MapPin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const heroImages = [
-  { id: 1, url: '', bg: 'from-blue-100 to-blue-200' },
-  { id: 2, url: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=800&fit=crop', bg: 'from-purple-100 to-purple-200' },
-  { id: 3, url: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=800&fit=crop', bg: 'from-green-100 to-green-200' },
-  { id: 4, url: 'https://images.unsplash.com/photo-1578898886225-385dc480ba5b?w=800&h=800&fit=crop', bg: 'from-indigo-100 to-indigo-200' },
-  { id: 5, url: 'https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&h=800&fit=crop', bg: 'from-pink-100 to-pink-200' },
+  { id: 1, url: 'https://res.cloudinary.com/dqyizevct/image/upload/v1763995068/30_Years_kgypdr.jpg', bg: 'from-blue-100 to-blue-200' },
+  { id: 2, url: 'https://res.cloudinary.com/dqyizevct/image/upload/v1763995067/Relax_Plus_haabd4.jpg', bg: 'from-purple-100 to-purple-200' },
+  { id: 3, url: 'https://res.cloudinary.com/dqyizevct/image/upload/v1763995062/15_Lacs_Plus_mxo9xa.jpg', bg: 'from-green-100 to-green-200' },
+  { id: 4, url: 'https://res.cloudinary.com/dqyizevct/image/upload/v1763995064/Magnetic_Elite_womirc.jpg', bg: 'from-indigo-100 to-indigo-200' },
+  { id: 5, url: 'https://res.cloudinary.com/dqyizevct/image/upload/v1763995069/Experia_culvga.jpg', bg: 'from-pink-100 to-pink-200' },
 ];
 
 export default function Hero() {
@@ -42,9 +42,14 @@ export default function Hero() {
               </p>
             </div>
 
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <a 
+              href="https://spinemat.com/collections/mattress"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-block"
+            >
               SHOP NOW
-            </button>
+            </a>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-gray-200">
               <div className="flex flex-col items-center text-center space-y-2">
@@ -68,19 +73,19 @@ export default function Hero() {
 
           <div className="relative order-1 md:order-2">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <div className="relative aspect-square">
+              <div className="relative aspect-[3307/2331]">
                 {heroImages.map((image, index) => (
                   <div
                     key={image.id}
-                    className={`absolute inset-0 bg-gradient-to-br ${image.bg} flex items-center justify-center transition-opacity duration-1000 ${
+                    className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ${
                       index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                     }`}
                   >
-                    <div className="w-full h-full flex items-center justify-center p-2">
+                    <div className="w-full h-full flex items-center justify-center">
                       <img 
                         src={image.url} 
                         alt={`Mattress ${image.id}`}
-                        className="w-full h-full object-cover rounded-lg shadow-xl"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                   </div>

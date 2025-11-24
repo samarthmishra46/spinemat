@@ -27,10 +27,15 @@ export default function FinalCTA() {
           Join 10,000+ happy customers who chose pain-free mornings and deeper sleep
         </p>
 
-        <button className="bg-white text-blue-600 hover:bg-blue-50 px-12 py-5 rounded-xl text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl inline-flex items-center space-x-3 group">
+        <a 
+          href="https://spinemat.com/collections/mattress"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-blue-600 hover:bg-blue-50 px-12 py-5 rounded-xl text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl inline-flex items-center space-x-3 group"
+        >
           <span>Shop Bestsellers</span>
           <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-        </button>
+        </a>
 
         <div className="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">

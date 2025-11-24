@@ -1,14 +1,11 @@
-import React from "react";
-
 export function VideoRunning() {
-  const logos = [
-    "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755359134/go_wheelo_quqgxp.gif",
-    "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755359130/arabian_rogpzs.gif",
-    "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755357609/asligems_cx9ntn.gif",
-    "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755443775/Binni_d8smwh.gif",
-    "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755443771/YHL_thsupk.gif",
-    "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755442431/photojewels_aojp4i.gif",
-    "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755506027/fictales_rim5pq.gif",
+  const videos = [
+    "https://res.cloudinary.com/dqyizevct/video/upload/v1763996749/WhatsApp_Video_2025-11-24_at_12.59.18_PM_sp2zd1.mp4",
+    "https://res.cloudinary.com/dqyizevct/video/upload/v1764005165/Spinemat_script_7_jvi0yg.mp4",
+    "https://res.cloudinary.com/dqyizevct/video/upload/v1764004997/WhatsApp_Video_2025-11-24_at_12.56.54_PM_kwxaum.mp4",
+    "https://res.cloudinary.com/dqyizevct/video/upload/v1764005556/Spinemat_script_1_1_piu0i4.mp4",
+    "https://res.cloudinary.com/dqyizevct/video/upload/v1764005027/WhatsApp_Video_2025-11-24_at_12.59.17_PM_nvhjcm.mp4",
+        "https://res.cloudinary.com/dqyizevct/video/upload/v1764005589/Spinemat_Script_5_1_lp9s6n.mp4",
     
   ];
 
@@ -24,11 +21,14 @@ export function VideoRunning() {
 
       {/* Marquee Wrapper */}
       <div className="flex whitespace-nowrap animate_marquee">
-        {[...logos, ...logos].map((src, idx) => (
+        {[...videos, ...videos].map((src, idx) => (
           <div key={idx} className="flex-shrink-0 w-32 sm:w-40 md:w-48 px-4">
-            <img
+            <video
               src={src}
-              alt="logo"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-auto object-contain rounded-lg"
             />
           </div>
