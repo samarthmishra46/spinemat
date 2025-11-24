@@ -2,11 +2,11 @@ import { Shield, Truck, Star, MapPin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const heroImages = [
-  { id: 1, emoji: '😴', bg: 'from-blue-100 to-blue-200' },
-  { id: 2, emoji: '🛏️', bg: 'from-purple-100 to-purple-200' },
-  { id: 3, emoji: '✨', bg: 'from-green-100 to-green-200' },
-  { id: 4, emoji: '🌙', bg: 'from-indigo-100 to-indigo-200' },
-  { id: 5, emoji: '💤', bg: 'from-pink-100 to-pink-200' },
+  { id: 1, url: '', bg: 'from-blue-100 to-blue-200' },
+  { id: 2, url: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=800&fit=crop', bg: 'from-purple-100 to-purple-200' },
+  { id: 3, url: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=800&fit=crop', bg: 'from-green-100 to-green-200' },
+  { id: 4, url: 'https://images.unsplash.com/photo-1578898886225-385dc480ba5b?w=800&h=800&fit=crop', bg: 'from-indigo-100 to-indigo-200' },
+  { id: 5, url: 'https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&h=800&fit=crop', bg: 'from-pink-100 to-pink-200' },
 ];
 
 export default function Hero() {
@@ -76,10 +76,12 @@ export default function Hero() {
                       index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                     }`}
                   >
-                    <div className="text-center p-8">
-                      <div className="w-64 h-64 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center">
-                        <span className="text-6xl">{image.emoji}</span>
-                      </div>
+                    <div className="w-full h-full flex items-center justify-center p-2">
+                      <img 
+                        src={image.url} 
+                        alt={`Mattress ${image.id}`}
+                        className="w-full h-full object-cover rounded-lg shadow-xl"
+                      />
                     </div>
                   </div>
                 ))}
